@@ -1,0 +1,14 @@
+main: com.alexlabbane.christmasmanhunt.ChristmasManhunt
+api: spigot
+api-version: 1.16
+name: ChristmasManhunt
+version: '1.0'
+author: Alex Labbane
+
+commands:
+  Hello:
+    description: Hello command
+  Hunter:
+    description: Add/remove hunter
+  Test:
+    description: Debug

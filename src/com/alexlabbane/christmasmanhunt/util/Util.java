@@ -56,7 +56,7 @@ public class Util {
 		return entity.getPersistentDataContainer().get(key, PersistentDataType.STRING);
 	}
 	
-	//Boolean (0 or 1 int)
+	// Boolean (0 or 1 int)
 	public static ItemStack addNBTTagBoolean(ItemStack item, String tag, int data) {
 		NamespacedKey key = new NamespacedKey(plugin, tag);
 		ItemMeta itemMeta = item.getItemMeta();
@@ -75,7 +75,7 @@ public class Util {
 		return item.getItemMeta().getPersistentDataContainer().get(key, PersistentDataType.INTEGER);
 	}
 	
-	//Long
+	// Long
 	public static ItemStack addNBTTagLong(ItemStack item, String tag, long data) {
 		NamespacedKey key = new NamespacedKey(plugin, tag);
 		ItemMeta itemMeta = item.getItemMeta();

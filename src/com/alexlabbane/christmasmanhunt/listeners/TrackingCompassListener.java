@@ -38,12 +38,16 @@ public class TrackingCompassListener implements Listener {
 				return;
 			
 			// Make sure player is a hunter
-			if(!hunters.contains(event.getPlayer()))
+			try {
+				if(!hunters.contains(event.getPlayer()) || !Util.getNBTTagString(event.getItem(), "ChristmasManhuntAbility").equals("TrackingCompass"))
+					return;
+			} catch(NullPointerException e) {
 				return;
+			}
 			
 			ItemStack item = event.getItem();
 					
-			if(event.getAction() == Action.RIGHT_CLICK_AIR && Util.getNBTTagString(event.getItem(), "ChristmasManhuntAbility").equals("TrackingCompass")) {
+			if(event.getAction() == Action.RIGHT_CLICK_AIR) {
 				Player nearestNonHunter = getNearestNonHunter(event.getPlayer());
 				if(nearestNonHunter == null) {
 					event.getPlayer().sendMessage(ChatColor.RED + "Nobody to track!");

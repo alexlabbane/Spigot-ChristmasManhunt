@@ -43,9 +43,12 @@ public class CustomSnowstormListener implements Listener {
 			ItemStack item = e.getItem();
 			
 			// must be hunter, holding correct block
-			if(!this.hunters.contains(p) || e.getItem() == null || !Util.getNBTTagString(item, "ChristmasManhuntAbility").equals("CustomSnowstorm"))
+			try {
+				if(!this.hunters.contains(p) || e.getItem() == null || !Util.getNBTTagString(item, "ChristmasManhuntAbility").equals("CustomSnowstorm"))
+					return;
+			} catch (NullPointerException npe) {
 				return;
-			
+			}
 			// make sure not in 5 minute cooldown period
 			if(System.currentTimeMillis() - Util.getNBTTagLong(item, "CustomSnowstormLastUse") < 1000 * 150) {
 				p.sendMessage("Blizzard in cooldown for " + (150 - (System.currentTimeMillis() - Util.getNBTTagLong(item, "CustomSnowstormLastUse")) / 1000) + " seconds!");

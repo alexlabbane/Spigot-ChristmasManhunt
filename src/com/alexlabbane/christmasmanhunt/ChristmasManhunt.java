@@ -30,6 +30,7 @@ import com.alexlabbane.christmasmanhunt.items.CustomSnowstorm;
 import com.alexlabbane.christmasmanhunt.items.TrackingCompass;
 import com.alexlabbane.christmasmanhunt.listeners.AirFrostWalkerListener;
 import com.alexlabbane.christmasmanhunt.listeners.CustomSnowstormListener;
+import com.alexlabbane.christmasmanhunt.listeners.HungerListener;
 import com.alexlabbane.christmasmanhunt.listeners.PlayerListener;
 import com.alexlabbane.christmasmanhunt.listeners.SpawnSnowmanArmyListener;
 import com.alexlabbane.christmasmanhunt.listeners.TrackingCompassListener;
@@ -53,6 +54,7 @@ public class ChristmasManhunt extends JavaPlugin implements Listener {
     	snowmanArmy = new SpawnSnowmanArmyEgg(hunters, this);
     	
     	getServer().getPluginManager().registerEvents(new TrackingCompassListener(this, hunters, nonHunters), this);
+    	getServer().getPluginManager().registerEvents(new HungerListener(nonHunters, hunters), this);
     	getServer().getPluginManager().registerEvents(new AirFrostWalkerListener(this, hunters, nonHunters), this);
     	getServer().getPluginManager().registerEvents(new PlayerListener(this, nonHunters, hunters), this);
     	getServer().getPluginManager().registerEvents(new SnowballDamageListener(hunters), this);
@@ -107,10 +109,19 @@ public class ChristmasManhunt extends JavaPlugin implements Listener {
     			p.sendMessage(ChatColor.GREEN + "You are not a hunter.");
     			
     			// TODO: Change removals
-    			//p.getInventory().removeItem(trackingCompass.getCompass());
-    			//p.getInventory().removeItem(iceBlock.getIceBlock());
-    			//p.getInventory().removeItem(snowstorm.getSnowBlock());
-    			//p.getInventory().removeItem(snowmanArmy.getVexEgg());
+    			ArrayList<ItemStack> toRemove = new ArrayList<ItemStack>();
+    			for(ItemStack i : p.getInventory().getStorageContents()) {
+    				try {
+	    				if(!Util.getNBTTagString(i, "ChristmasManhuntAbility").equals(""))
+	    					toRemove.add(i);
+    				} catch(NullPointerException e) {
+    					// Do nothing
+    				}
+    			}
+    			
+    			for(ItemStack i : toRemove) {
+    				p.getInventory().remove(i);
+    			}
     		} else {
     			return false;
     		}

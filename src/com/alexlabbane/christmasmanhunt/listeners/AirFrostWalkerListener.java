@@ -44,9 +44,13 @@ public class AirFrostWalkerListener implements Listener {
 		ItemStack[] inventory = p.getInventory().getStorageContents();
 		ItemStack item = null;
 		for(ItemStack i : inventory) {
-			if(Util.getNBTTagString(i, "ChristmasManhuntAbility").equals("AirFrostWalker")) {
-				item = i;
-				break;
+			try {
+				if(Util.getNBTTagString(i, "ChristmasManhuntAbility").equals("AirFrostWalker")) {
+					item = i;
+					break;
+				}
+			} catch(NullPointerException e) {
+				
 			}
 		}
 		
@@ -88,8 +92,12 @@ public class AirFrostWalkerListener implements Listener {
 	// handle activate/deactivate and mode changes
 	@EventHandler
 	public void onPlayerClick(PlayerInteractEvent event) {
-		if(event.getItem() == null || !Util.getNBTTagString(event.getItem(), "ChristmasManhuntAbility").equals("AirFrostWalker"))
+		try {
+			if(event.getItem() == null || !Util.getNBTTagString(event.getItem(), "ChristmasManhuntAbility").equals("AirFrostWalker"))
+				return;
+		} catch (NullPointerException e) {
 			return;
+		}
 		
 		// Make sure player is a hunter
 		if(!hunters.contains(event.getPlayer()))

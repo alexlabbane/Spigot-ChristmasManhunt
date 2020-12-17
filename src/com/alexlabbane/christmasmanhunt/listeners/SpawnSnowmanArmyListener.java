@@ -45,8 +45,12 @@ public class SpawnSnowmanArmyListener implements Listener {
 		ItemStack item = e.getItem();
 		
 		// must be hunter, holding correct block
-		if(!this.hunters.contains(p) || e.getItem() == null || !Util.getNBTTagString(item, "ChristmasManhuntAbility").equals("SpawnSnowmanArmyEgg"))
+		try {
+			if(!this.hunters.contains(p) || e.getItem() == null || !Util.getNBTTagString(item, "ChristmasManhuntAbility").equals("SpawnSnowmanArmyEgg"))
+				return;
+		} catch(NullPointerException npe) {
 			return;
+		}
 		
 		// make sure not in 5 minute cooldown period
 		if(System.currentTimeMillis() - Util.getNBTTagLong(item, "SpawnSnowmanArmyEggLastUse") < 1000 * 150) {
@@ -88,7 +92,7 @@ public class SpawnSnowmanArmyListener implements Listener {
 		final ArrayList<EntityHostileSnowman> snowmen = new ArrayList<EntityHostileSnowman>();
 		final WorldServer world = ((CraftWorld)loc.getWorld()).getHandle();
 		for(double i = 0; i < Math.PI * 2; i += 2 * Math.PI / 6.0) {
-			Location spawnLoc = new Location(loc.getWorld(), loc.getX() + SPAWN_RADIUS * Math.sin(i), loc.getY(), loc.getZ() + SPAWN_RADIUS * Math.cos(i));			
+			Location spawnLoc = new Location(loc.getWorld(), loc.getX() + SPAWN_RADIUS * Math.sin(i), loc.getY() + 2, loc.getZ() + SPAWN_RADIUS * Math.cos(i));			
     		EntityHostileSnowman snowman = new EntityHostileSnowman(spawnLoc);
     		world.addEntity(snowman);
     		snowmen.add(snowman);

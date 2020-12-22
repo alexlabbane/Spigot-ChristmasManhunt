@@ -45,7 +45,7 @@ public class SnowballDamageListener implements Listener {
 			
 			double baseDamage = 4.0;
 			double damage = baseDamage * (1.0 - getDamageReduced(p));
-			p.damage(damage);
+			p.damage(Math.min(3.0, damage));
 		}
 		
 	}

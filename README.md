@@ -67,4 +67,5 @@ Drop the plugin into the 'plugins' folder on a Spigot server, and replace the 'w
 # Videos
 
 If you play this map on Youtube, Twitch, etc. please provide a link to Jiro's channel: https://www.youtube.com/channel/UCihm5tjx-wqJgHTpyjWGYkQ
+
 In addition, provide a link to the map/plugin download so that people can try it themselves: https://github.com/alexlabbane/Spigot-ChristmasManhunt

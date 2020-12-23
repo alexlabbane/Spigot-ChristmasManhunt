@@ -32,7 +32,7 @@ Krampus is given a compass that, when right clicked, will update to point to the
 
 This is the preferred way of travel throughout the map for Krampus. Essentially, it allows Krampus to walk on a trail of ice while in the air (think regular frost walker except on air instead of water). This is the most complex ability to use (but also the most fun in my opinion).
 
-The ability is controlled through the use of the ice block given the Krampus when running the `/hunter add <player name>` command. There are two kinds of settings for this ability:
+The ability is controlled through the use of the ice block given to Krampus when running the `/hunter add <player name>` command. There are two kinds of settings for this ability:
 
 1) Active/Inactive: This simply indicates whether or not the ability is active or not and can be changed by right clicking with the ice block in hand.
 2) Up/Down: This alters the behavior of the ability to allow the hunter to move up or down while in the air. It can be changed by left clicking with the ice block in hand.

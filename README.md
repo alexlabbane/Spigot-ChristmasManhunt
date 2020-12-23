@@ -30,7 +30,7 @@ Krampus is given a compass that, when right clicked, will update to point to the
 
 ### Air Frost Walker
 
-This is the preferred way of travel throughout the map for Krampus. Essentially, it allows Krampus to walk on a trail of ice while in the air (think regular frost walker excep on air instead of water). This is the most complex ability to use (but also the most fun in my opinion).
+This is the preferred way of travel throughout the map for Krampus. Essentially, it allows Krampus to walk on a trail of ice while in the air (think regular frost walker except on air instead of water). This is the most complex ability to use (but also the most fun in my opinion).
 
 The ability is controlled through the use of the ice block given the Krampus when running the `/hunter add <player name>` command. There are two kinds of settings for this ability:
 

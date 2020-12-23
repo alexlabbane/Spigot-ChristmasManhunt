@@ -22,7 +22,7 @@ The Speedrunner is given no special abilities and will have to be creative to be
 
 To start the game as Krampus, simply type the command `/hunter add <player name>`. Then, running `/kill` will cause Krampus to respawn at their designated starting point. To become a Speedrunner again, use the command `/hunter remove <player name>`.
 
-For Krampus, the goal of the game is to kill the Speedrunner before the presents can be delivered. To help with this, Krampus has some special items/abilities to be aware of. For all of these abilities, I recommend trying them out a couple of times in game to see how the work first, but descriptions are provided below.
+For Krampus, the goal of the game is to kill the Speedrunner before the presents can be delivered. To help with this, Krampus has some special items/abilities to be aware of. For all of these abilities, I recommend trying them out a couple of times in game to see how they work first, but descriptions are provided below.
 
 ### Tracking Compass
 

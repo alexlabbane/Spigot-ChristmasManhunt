@@ -1,6 +1,6 @@
 # Speedrunner vs Krampus
 
-This is a Spigot plugin developed for [Jiro's Speedrunner vs Krampus video](https://www.youtube.com/channel/UCihm5tjx-wqJgHTpyjWGYkQ) on Youtube. It was inspired by Dream's Minecraft Manhunt series on Youtube but is designed to introduce new, interesting gameplay elements. In this version, Krampus is the "hunter" trying to kill the Speedrunner before the Speedrunner can deliver gifts to seven designated houses on the map.
+This is a Spigot plugin developed for [Jiro's Speedrunner vs Krampus video](https://www.youtube.com/watch?v=cqoAfve3YnU) on Youtube. It was inspired by Dream's Minecraft Manhunt series on Youtube but is designed to introduce new, interesting gameplay elements. In this version, Krampus is the "hunter" trying to kill the Speedrunner before the Speedrunner can deliver gifts to seven designated houses on the map.
 
 You can find downloads for the Spigot plugin and world file in the releases on GitHub or by following [this link](https://github.com/alexlabbane/Spigot-ChristmasManhunt/releases/tag/1.0).
 
